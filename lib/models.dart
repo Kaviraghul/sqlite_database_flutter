@@ -1,7 +1,7 @@
 class Note {
   final int? id;
   final String title;
-  final String age;
+  final int age;
   final String description;
   final String email;
 
