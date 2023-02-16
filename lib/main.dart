@@ -1,4 +1,4 @@
-import 'package:exploring_sqlite/home_screen.dart';
+import 'package:exploring_sqlite/presentation/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

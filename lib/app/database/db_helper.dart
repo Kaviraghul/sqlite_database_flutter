@@ -1,6 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 
-import 'package:exploring_sqlite/models.dart';
+import 'package:exploring_sqlite/domain/models.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -32,5 +32,12 @@ class DBHelper {
     var dbClient = await db;
     await dbClient!.insert('notes', note.toMap());
     return note;
+  }
+
+  Future<List<Note>> getNotes() async {
+    var dbClient = await db;
+    final List<Map<String, Object?>> queryResult =
+        await dbClient!.query('notes');
+    return queryResult.map((e) => Note.fromMap(e)).toList();
   }
 }
